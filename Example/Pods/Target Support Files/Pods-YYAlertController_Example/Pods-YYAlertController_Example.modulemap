@@ -1,0 +1,6 @@
+framework module Pods_YYAlertController_Example {
+  umbrella header "Pods-YYAlertController_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

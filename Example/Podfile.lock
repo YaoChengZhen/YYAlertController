@@ -1,0 +1,16 @@
+PODS:
+  - YYAlertController (0.1.0)
+
+DEPENDENCIES:
+  - YYAlertController (from `../`)
+
+EXTERNAL SOURCES:
+  YYAlertController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YYAlertController: 2be8bbf05d246df91f9544e1a5cb6b0a53d32694
+
+PODFILE CHECKSUM: b6a80e645b5f1b9293b5f3d56ccacac132f1c0fa
+
+COCOAPODS: 1.7.5
