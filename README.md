@@ -32,7 +32,7 @@ $ pod install
 ```
 ## Use
 1.Default alert
-```ruby
+```swift
         let alertView = YYAlertView.init(title: "提示", message: "确定要删除吗？")
         //alertView.layer.cornerRadius = 8
         //alertView.layer.masksToBounds = true
@@ -52,7 +52,7 @@ $ pod install
 //        self.present(alertVC, animated: true, completion: nil)
 ```
 2.ActionSheet
-```ruby
+```swift
         let alertView = YYAlertView.init(title: "提示", message: "info")
         alertView.layer.cornerRadius = 8
         alertView.layer.masksToBounds = true
@@ -69,7 +69,7 @@ $ pod install
         alertView.show(in: self, preferredStyle: .actionSheet)
 ```
 3. ShowInWindow
-```ruby
+```swift
 //文本自适应
         let alertView = YYAlertView.alertViewWithTitle("YYAlertView", message: "A message should be a short, but it can support long message, this is ver heard HHhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh. (NSTextAlignmentCenter)")
         alertView.addAction(YYAlertAction.init("取消", style: .cancle, handler: { (action) in
@@ -81,7 +81,7 @@ $ pod install
         alertView.showInWindow()
 ```
 4. TextField Alert
-```ruby
+```swift
       let alertView = YYAlertView.init(title: "提示", message: "输入相关信息")
         alertView.layer.cornerRadius = 8
         alertView.layer.masksToBounds = true
@@ -103,7 +103,7 @@ $ pod install
         alertView.show(in: self, preferredStyle: .alert)
 ```
 5. CustomView
-```ruby
+```swift
 //支持自定义视图，包括利用xib创建的视图
         let customView = YCustomView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.7, height: 300))
         titleView.backgroundColor = UIColor.white
