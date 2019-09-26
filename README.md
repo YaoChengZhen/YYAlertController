@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/YYAlertController.svg?style=flat)](https://cocoapods.org/pods/YYAlertController)
 [![License](https://img.shields.io/cocoapods/l/YYAlertController.svg?style=flat)](https://cocoapods.org/pods/YYAlertController)
 [![Platform](https://img.shields.io/cocoapods/p/YYAlertController.svg?style=flat)](https://cocoapods.org/pods/YYAlertController)
+# 简介
 **语言**：Swift  5.0
 **原理介绍**：利用UIViewController的转场动画，通过自定义转场达到和系统弹出警告框一样的效果
 视图分为三类：
