@@ -1,7 +1,7 @@
 {
   "name": "YYAlertController",
   "version": "0.1.0",
-  "summary": "A short description of YYAlertController.",
+  "summary": "Powerful, Easy to use alert view or popup view on controller and window,custom view and animation,for swift,support iphone, ipad",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/YaoChengZhen/YYAlertController",
   "license": {
@@ -16,7 +16,10 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "YYAlertController/Classes/**/*"
+  "swift_versions": "5.0",
+  "source_files": "YYAlertController/Classes/**/*",
+  "frameworks": "UIKit",
+  "swift_version": "5.0"
 }

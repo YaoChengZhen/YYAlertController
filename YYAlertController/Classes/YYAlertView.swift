@@ -8,7 +8,7 @@
 
 import UIKit
 public class YYAlertAction: NSObject {
-    class func actionWithTitle(_ title: String?, style: YYAlertView.YYAlertActionStyle, handler: ((_ action: YYAlertAction) -> Void)?) -> YYAlertAction {
+    public class func actionWithTitle(_ title: String?, style: YYAlertView.YYAlertActionStyle, handler: ((_ action: YYAlertAction) -> Void)?) -> YYAlertAction {
         return YYAlertAction.init(title, style: style, handler: handler)
     }
     
@@ -16,7 +16,7 @@ public class YYAlertAction: NSObject {
         super.init()
         
     }
-    init(_ title: String?, style: YYAlertView.YYAlertActionStyle, handler: ((_ action: YYAlertAction) -> Void)?) {
+    public init(_ title: String?, style: YYAlertView.YYAlertActionStyle, handler: ((_ action: YYAlertAction) -> Void)?) {
         super.init()
         self.title = title
         self.style = style
@@ -38,47 +38,47 @@ public class YYAlertView: UIView {
     fileprivate(set) weak var messageLabel: UILabel?
     
     /// alertView textfield array
-    var textFieldArray: Array<UITextField>? {
+    public var textFieldArray: Array<UITextField>? {
         return textFields
     }
 
     /// default 280, if 0 don't add width constraint,
-    var alertViewWidth: CGFloat = 280
+    public var alertViewWidth: CGFloat = 280
 
     /// contentView space custom default 15
-    var contentViewSpace: CGFloat = 15
+    public var contentViewSpace: CGFloat = 15
 
     // textLabel custom default 6
-    var textLabelSpace: CGFloat = 6
-    var textLabelContentViewEdge: CGFloat = 15
+    public var textLabelSpace: CGFloat = 6
+    public var textLabelContentViewEdge: CGFloat = 15
     
     // button custom
     ///defalut white
-    var buttonTextColor: UIColor?
-    var buttonHeight: CGFloat = 40 //defalut 40
-    var buttonSpace: CGFloat = 6 //defalut 6
+    public var buttonTextColor: UIColor?
+    public var buttonHeight: CGFloat = 40 //defalut 40
+    public var buttonSpace: CGFloat = 6 //defalut 6
     
-    var buttonContentViewEdge: CGFloat = 15
-    var buttonContentViewTop: CGFloat = 15
-    var buttonCornerRadius: CGFloat = 4
-    var buttonFont: UIFont = UIFont.init(name: "HelveticaNeue", size: 16)!
-    var buttonDefaultBgColor: UIColor = UIColor.init(red: 52/255.0, green: 152/255.0, blue: 219/255.0, alpha: 1)
-    var buttonCancelBgColor: UIColor = UIColor.init(red: 127/255.0, green: 140/255.0, blue: 141/255.0, alpha: 1)
-    var buttonDestructiveBgColor: UIColor = UIColor.init(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1)
+    public var buttonContentViewEdge: CGFloat = 15
+    public var buttonContentViewTop: CGFloat = 15
+    public var buttonCornerRadius: CGFloat = 4
+    public var buttonFont: UIFont = UIFont.init(name: "HelveticaNeue", size: 16)!
+    public var buttonDefaultBgColor: UIColor = UIColor.init(red: 52/255.0, green: 152/255.0, blue: 219/255.0, alpha: 1)
+    public var buttonCancelBgColor: UIColor = UIColor.init(red: 127/255.0, green: 140/255.0, blue: 141/255.0, alpha: 1)
+    public var buttonDestructiveBgColor: UIColor = UIColor.init(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1)
     
 
 
    // textField custom
-    var textFieldFont: UIFont = UIFont.systemFont(ofSize: 14)
-    var textFieldBackgroudColor: UIColor = .white
-    var textFieldBorderColor: UIColor = UIColor.init(red: 203/255.0, green: 203/255.0, blue: 203/255.0, alpha: 1)
+    public var textFieldFont: UIFont = UIFont.systemFont(ofSize: 14)
+    public var textFieldBackgroudColor: UIColor = .white
+    public var textFieldBorderColor: UIColor = UIColor.init(red: 203/255.0, green: 203/255.0, blue: 203/255.0, alpha: 1)
    
-    var textFieldHeight: CGFloat = 29
-    var textFieldEdge: CGFloat = 8
-    var textFieldBorderWidth: CGFloat = 0.5
-    var textFieldContentViewEdge: CGFloat = 15
+    public var textFieldHeight: CGFloat = 29
+    public var textFieldEdge: CGFloat = 8
+    public var textFieldBorderWidth: CGFloat = 0.5
+    public var textFieldContentViewEdge: CGFloat = 15
     
-    var clickedAutoHide: Bool = true
+    public var clickedAutoHide: Bool = true
     //MARK: 私有变量
     fileprivate var buttons: Array<UIButton> = []
     fileprivate var actions: Array<YYAlertAction> = []
@@ -103,7 +103,7 @@ public class YYAlertView: UIView {
         addContentViews()
         addTextLabels()
     }
-    convenience init(title: String, message: String) {
+    public convenience init(title: String, message: String) {
         self.init()
         titleLable?.text = title
         messageLabel?.text = message
@@ -112,7 +112,7 @@ public class YYAlertView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    class func alertViewWithTitle(_ title: String, message: String) -> YYAlertView {
+    public class func alertViewWithTitle(_ title: String, message: String) -> YYAlertView {
         return YYAlertView.init(title: title, message: message)
     }
     override public func didMoveToSuperview() {
@@ -123,7 +123,7 @@ public class YYAlertView: UIView {
         }
     }
     
-    func addAction(_ action: YYAlertAction) -> Void {
+    public func addAction(_ action: YYAlertAction) -> Void {
         let button = UIButton.init(type: .custom)
         button.clipsToBounds = true
         button.layer.cornerRadius = buttonCornerRadius
@@ -150,7 +150,7 @@ public class YYAlertView: UIView {
 
     }
     
-    func addTextFieldWithConfigurationHandler(_ configurationHandler: ((_ textField: UITextField) -> Void)?) -> Void {
+    public func addTextFieldWithConfigurationHandler(_ configurationHandler: ((_ textField: UITextField) -> Void)?) -> Void {
         let textField = UITextField.init()
         textField.tag = 20000 + textFields.count
         textField.font = textFieldFont

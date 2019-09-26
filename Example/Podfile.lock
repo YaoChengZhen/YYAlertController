@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YYAlertController: 2be8bbf05d246df91f9544e1a5cb6b0a53d32694
+  YYAlertController: b2343b4e317e9bee5ae539c8543e46c42914dfc9
 
 PODFILE CHECKSUM: b6a80e645b5f1b9293b5f3d56ccacac132f1c0fa
 

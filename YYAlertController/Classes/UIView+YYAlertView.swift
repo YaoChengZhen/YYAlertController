@@ -14,15 +14,15 @@ extension UIView {
         return nib?.first as? UIView
     }
     
-    class func createViewFromNib() -> UIView?{
+    public class func createViewFromNib() -> UIView?{
         return self.createViewFromNibName(NSStringFromClass(self.classForCoder()))
     }
     
-    class func createViewFromNib(_ nibName: String) -> UIView?{
+    public class func createViewFromNib(_ nibName: String) -> UIView?{
         return self.createViewFromNibName(nibName)
     }
     
-    func viewController() -> UIViewController? {
+    public func viewController() -> UIViewController? {
         var next = self.superview
         while next != nil {
             let nextRes = next?.next
@@ -36,7 +36,7 @@ extension UIView {
 }
 
 //MARK: show in controller
-extension UIView {
+public extension UIView {
     func show(in vc: UIViewController) -> Void {
         
         show(in: vc, preferredStyle: .alert, transitionAnimation: .fade)
@@ -70,7 +70,7 @@ extension UIView {
 }
 
 //MARK: show in Window
-extension UIView {
+public extension UIView {
     func showInWindow() -> Void {
         showInWindow(backgoundTapDismissEnable: false)
     }
@@ -98,7 +98,7 @@ extension UIView {
 }
 
 //MARK: hide
-extension UIView {
+public extension UIView {
     // this will judge and call right method
     func hideView() -> Void {
         if isShowInAlertController {

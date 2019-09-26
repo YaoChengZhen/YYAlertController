@@ -10,7 +10,7 @@ import UIKit
 
 public class YYShowAlertView: UIView {
     fileprivate(set) var alertView: UIView?
-    var backgroundView: UIView? {
+    public var backgroundView: UIView? {
         willSet {
             if self.backgroundView != nil && self.backgroundView != newValue {
                 self.backgroundView?.removeFromSuperview()
@@ -21,15 +21,15 @@ public class YYShowAlertView: UIView {
             addSingleGesture()
         }
     }
-    var backgoundTapDismissEnable: Bool = false {
+    public var backgoundTapDismissEnable: Bool = false {
         didSet {
             singleTap?.isEnabled = self.backgoundTapDismissEnable
         }
     }
-    var alertViewOriginY: CGFloat = 0
-    var alertViewEdging: CGFloat = 15
+    public var alertViewOriginY: CGFloat = 0
+    public var alertViewEdging: CGFloat = 15
     ///私有变量
-    weak var singleTap: UITapGestureRecognizer?
+    fileprivate weak var singleTap: UITapGestureRecognizer?
     fileprivate var currentWindow: UIWindow? {
         return UIApplication.shared.windows.first
     }
@@ -40,7 +40,7 @@ public class YYShowAlertView: UIView {
         addSingleGesture()
         backgoundTapDismissEnable = false
     }
-    init(alertView tipView: UIView) {
+    public init(alertView tipView: UIView) {
         super.init(frame: .zero)
         addBackgroundView()
         addSingleGesture()
@@ -71,7 +71,7 @@ public class YYShowAlertView: UIView {
 
 //MARK: hide  和 show
     /// hide
-    func hide() -> Void {
+    public func hide() -> Void {
         if superview != nil {
             UIView.animate(withDuration: 0.25, animations: {
                 self.alertView?.transform = CGAffineTransform.init(scaleX: 0.1, y: 0.1)
@@ -83,7 +83,7 @@ public class YYShowAlertView: UIView {
         }
     }
     /// show
-    func show() -> Void {
+    public func show() -> Void {
         if superview == nil {
             currentWindow?.addSubview(self)
         }

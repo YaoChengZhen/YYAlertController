@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YYAlertController'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Powerful, Easy to use alert view or popup view on controller and window,custom view and animation,for swift,support iphone, ipad'
 
 # This description is used to generate tags and improve search results.

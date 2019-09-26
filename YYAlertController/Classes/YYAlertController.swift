@@ -23,12 +23,12 @@ public enum YYAlertControllerAnimation: Int {
 
 public class YYAlertController: UIViewController {
     ///弹窗View 只读
-    private(set) var alertView: UIView?
+    public private(set) var alertView: UIView?
     ///背景: 默认白色
-    var bcgColor: UIColor = .white
+    public var bcgColor: UIColor = .white
     
     ///set coustomView to it
-    var bcgView: UIView? {
+    public var bcgView: UIView? {
         willSet {
             if self.bcgView != nil && newValue != nil{
                 newValue?.translatesAutoresizingMaskIntoConstraints = false
@@ -46,33 +46,33 @@ public class YYAlertController: UIViewController {
     }
     
     ///style: 只读属性
-    private(set) var preferredSyle: YYAlertControllerStyle?
+    public private(set) var preferredSyle: YYAlertControllerStyle?
     
     ///Animation: 只读属性
-    private(set) var transitionAnimation: YYAlertControllerAnimation?
+    public private(set) var transitionAnimation: YYAlertControllerAnimation?
     
-    var animationClass: AnyClass?
+    public var animationClass: AnyClass?
     ///点击背景消失，弹窗 default false
-    var bcgTapDismissEnable: Bool = false {
+    public var bcgTapDismissEnable: Bool = false {
         didSet {
             singleTap?.isEnabled = self.bcgTapDismissEnable
         }
     }
     ///default center Y
-    var alertViewOriginY: CGFloat = 0
+    public var alertViewOriginY: CGFloat = 0
     //  when width frame equal to 0,or no width constraint ,this proprty will use, default to 15 edge
-    var alertStyleEdging: CGFloat = 0
+    public var alertStyleEdging: CGFloat = 0
     
 ///    default 0
-    var actionSheetStyleEdging: CGFloat = 0
+    public var actionSheetStyleEdging: CGFloat = 0
     
     /// alertView lifecycle block
-    var viewWillShowHandler: ((_ alertView: UIView) -> Void)?
-    var viewDidShowHandler: ((_ alertView: UIView) -> Void)?
-    var viewWillHideHandler: ((_ alertView: UIView) -> Void)?
-    var viewDidHideHandler: ((_ alertView: UIView) -> Void)?
+    public var viewWillShowHandler: ((_ alertView: UIView) -> Void)?
+    public var viewDidShowHandler: ((_ alertView: UIView) -> Void)?
+    public var viewWillHideHandler: ((_ alertView: UIView) -> Void)?
+    public var viewDidHideHandler: ((_ alertView: UIView) -> Void)?
 /// dismiss controller completed block
-    var dismissComplete: (() -> Void)?
+    public var dismissComplete: (() -> Void)?
     
     //MARK:私有变量
     fileprivate var alertViewCenterYConstraint: NSLayoutConstraint?
@@ -82,16 +82,16 @@ public class YYAlertController: UIViewController {
 
 
     //MARK: 初始化AlertView
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
         configureController()
     }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         configureController()
     }
     
-    init(_ alertView: UIView, preferredStyle: YYAlertControllerStyle) {
+     public init(_ alertView: UIView, preferredStyle: YYAlertControllerStyle) {
         super.init(nibName: nil, bundle: nil)
         configureController()
         self.alertView = alertView
@@ -111,19 +111,19 @@ public class YYAlertController: UIViewController {
 //    init(_ alertView: UIView) {
 //    }
     ///创建一个Alert 默认fade动画
-    class func initWithAlertView(_ view: UIView) -> YYAlertController {
+    public class func initWithAlertView(_ view: UIView) -> YYAlertController {
         return YYAlertController.init(view, preferredStyle: .alert, animation: .fade, animationClass: nil)
     }
     ///创建一个Alert或sheet 默认fade动画
-    class func initWithAlertView(_ view: UIView, preferedStyle: YYAlertControllerStyle) -> YYAlertController {
+    public class func initWithAlertView(_ view: UIView, preferedStyle: YYAlertControllerStyle) -> YYAlertController {
         return YYAlertController.init(view, preferredStyle: preferedStyle, animation: .fade, animationClass: nil)
     }
     
-    class func initWithAlertView(_ view: UIView, preferedStyle: YYAlertControllerStyle, animation: YYAlertControllerAnimation) -> YYAlertController {
+    public class func initWithAlertView(_ view: UIView, preferedStyle: YYAlertControllerStyle, animation: YYAlertControllerAnimation) -> YYAlertController {
         let vc = YYAlertController.init(view, preferredStyle: preferedStyle, animation: animation, animationClass: nil)
         return vc
     }
-    class func initWithAlertView(_ view: UIView, preferedStyle: YYAlertControllerStyle, animation: YYAlertControllerAnimation, animationClass: AnyClass) -> YYAlertController {
+    public class func initWithAlertView(_ view: UIView, preferedStyle: YYAlertControllerStyle, animation: YYAlertControllerAnimation, animationClass: AnyClass) -> YYAlertController {
         return YYAlertController.init(view, preferredStyle: preferedStyle, animation: animation, animationClass: animationClass)
     }
     required init?(coder: NSCoder) {
