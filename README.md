@@ -4,6 +4,21 @@
 [![Version](https://img.shields.io/cocoapods/v/YYAlertController.svg?style=flat)](https://cocoapods.org/pods/YYAlertController)
 [![License](https://img.shields.io/cocoapods/l/YYAlertController.svg?style=flat)](https://cocoapods.org/pods/YYAlertController)
 [![Platform](https://img.shields.io/cocoapods/p/YYAlertController.svg?style=flat)](https://cocoapods.org/pods/YYAlertController)
+**语言**：Swift  5.0
+**原理介绍**：利用UIViewController的转场动画，通过自定义转场达到和系统弹出警告框一样的效果
+视图分为三类：
+1. 标题和小标题
+2. 按钮
+3. 添加TextField
+
+**视图布局**：给View写一个扩展，功能是封装系统的布局类
+视图布局自适应
+**初始化**：各种初始化方法，基本满足各个场景需要
+**自定义视图**：支持自定义视图，且自定义视图的布局可以用自动布局的方式，不会影响最终的显示效果。自定义布局中也可以.alert 和 actionSheet两种类型
+**场景**
+1. 所有类型都支持在UIWindow上显示
+2. UIViewController应用
+3. 自定义视图可以自己出发消失时间，降低耦合度hidden
 
 ## Example
 
